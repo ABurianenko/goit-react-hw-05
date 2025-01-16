@@ -1,0 +1,14 @@
+.searchInput {
+    border: 1px solid lightgray;
+    border-radius: 2px;
+    width: 200px;
+    font-size: 16px;
+}
+
+.searchButton {
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    background-color: rgb(246, 61, 92);
+    color: whitesmoke;
+    font-size: 16px;
+}

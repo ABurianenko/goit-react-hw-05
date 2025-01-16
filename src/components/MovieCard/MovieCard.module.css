@@ -1,0 +1,34 @@
+.posterImage {
+    width: 360px;
+    height: 100%;
+}
+
+.imageContainer {
+    width: 360px;
+    padding: 0;
+    margin: 0;
+}
+
+.movieCard {
+    display: flex;
+    gap: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid darkgray;
+}
+
+.overview {
+    margin: 28px 0;
+}
+
+.genreList {
+    display:  flex;
+    flex-direction: row;
+    gap: 8px;
+    list-style-type: none;
+    padding: 0;
+}
+
+.genreItem {
+    text-decoration: underline;
+}
+
