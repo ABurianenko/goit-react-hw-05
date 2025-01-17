@@ -3,12 +3,13 @@ import { NavLink, useLocation } from "react-router-dom";
 const MovieList = ({ movies }) => {
     
     const location = useLocation();
+    
     console.log(location);
     
     const MovieLink = ({ id, title }) => {
         const to = location.pathname === `/` ? `/movies/${id.toString()}` : `${id.toString()}`;
         return (
-            <NavLink to={to} state={{ from: location }}>
+            <NavLink to={to} state={location}>
                 {title}
             </NavLink>
         )

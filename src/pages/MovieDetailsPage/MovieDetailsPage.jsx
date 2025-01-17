@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { NavLink, Outlet, useParams, useLocation, Link } from "react-router-dom";
 import { getMovieDetails } from "../../services/API";
 import MovieCard from "../../components/MovieCard/MovieCard";
@@ -8,7 +8,8 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 const MovieDetails = () => {
     const location = useLocation();
-    console.log(location);
+    const goBackRef = useRef(location.state ?? "/movies")
+    console.log(goBackRef);
 
     const { movieId } = useParams();
     
@@ -37,13 +38,13 @@ const MovieDetails = () => {
         return 'Loading...'
     }
 
-    const backLink = location.state?.from ?? "/movies"
+    // const backLink = location.state?.from ?? "/movies"
 
     return (
         <div>
             {error ? (<ErrorMessage message={error} />) : (
                 <div>
-                    <Link to={backLink}>Go back</Link>
+                    <Link to={goBackRef.current}>Go back</Link>
 
                     {isLoading && <Loader />}
                     {!isLoading && <MovieCard movie={movie} />}
